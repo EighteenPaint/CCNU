@@ -61,6 +61,5 @@ class Data:
         return list(
             zip(self.q_rows[index], self.r_rows[index]))
 
-    # 批次大小
     def __len__(self):
         return len(self.q_rows)

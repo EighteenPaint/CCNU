@@ -5,7 +5,6 @@ import torch.nn.functional as F
 from torch import nn
 from torch.nn.init import xavier_uniform_, constant_
 
-from tcn import TemporalConvNetV4
 from utils import *
 
 

@@ -43,9 +43,14 @@ The requiring environment is as bellow:
 
 
 ## Running LSKT.
-Here are some examples for using LSKT model (on ASSISTments2009 datasets):
+Here is one example for using LSKT model (on ASSISTments2009 datasets):
 ```
-python main.py --dataset assist2009_updated --model lskt 
+step 1： edit config.ini and set default value for your experiment and dataset
+setp 2:  setup section value so that it can read the default:
+
+section = 'assist2009_updated'
+
+step 3: python main.py --dataset assist2009_updated --model lskt 
 ```
 
 

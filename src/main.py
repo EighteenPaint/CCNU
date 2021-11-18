@@ -135,7 +135,6 @@ def evaluate(model, data, batch_size):
         batch_size=batch_size,
         collate_fn=collate,  # lambda batch: collate(batch, data.q_num, params.length),
         shuffle=True,
-        # num_workers=2
     )
     for X, Y, S, Q in data_loader:
         x = Q.contiguous()
@@ -162,7 +161,6 @@ def evaluate(model, data, batch_size):
 
 def experiment(data_path, dataset, m, n, learning_rate, length, kernel_size, epochs, batch_size, seed, q_num,
                cv_num, ffn_h_num, opt, d_model, encoder_out, dropout, channel_size, d_ff, model_type='lskt'):
-    # 设置随机数生成器的种子
     set_seed(seed)
     path = './result_dkt_cross/%s' % ('{0:%Y-%m-%d-%H-%M-%S}'.format(datetime.datetime.now()))
     os.makedirs(path)
@@ -208,7 +206,6 @@ def experiment(data_path, dataset, m, n, learning_rate, length, kernel_size, epo
             model = cuda(
                 LSKTNT(kernel_size=kernel_size, num_channels=[channel_size] * m, q_num=q_num, d_model=d_model,
                        encoder_out=encoder_out, dropout=dropout, ffn_h_num=ffn_h_num, d_ff=d_ff, n=n))
-        # torch.optim.SGD：类，实现随机梯度下降（可选带动量）的优化器,params：用于优化的参数迭代或定义参数组的dicts，momentum:动量因子
         if opt == 'sgd':
             optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
         else:
@@ -249,14 +246,12 @@ def experiment(data_path, dataset, m, n, learning_rate, length, kernel_size, epo
             info_file.write('%s %s %s %s %s %s %s %s %s %s %s %s %s %s\n' % print_list)
         model_list.append(current_max_model)
 
-    # 模型测试
     train_list = []
     auc_list = []
     mse_list = []
     mae_list = []
     acc_list = []
     loss_list = []
-    # enumerate() 函数:用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出索引和序列元素，一般用在 for 循环当中。
     for _, model_item in enumerate(model_list):
         train_data = Data(open('%s/%s/%s_train%d.csv' % (data_path, dataset, dataset, cv_num), 'r'), length, q_num,
                           is_test=True)
@@ -284,21 +279,6 @@ def experiment(data_path, dataset, m, n, learning_rate, length, kernel_size, epo
         print('%s %s %s %s %s %s %s\n' % print_list_test)
         info_file.write('%s %s %s %s %s %s %s\n' % print_list_test)
 
-    average_train_auc = sum(train_list) / len(train_list)
-    average_test_auc = sum(auc_list) / len(auc_list)
-    average_test_mse = sum(mse_list) / len(mse_list)
-    average_test_mae = sum(mae_list) / len(mae_list)
-    average_test_acc = sum(acc_list) / len(acc_list)
-    average_test_loss = sum(loss_list) / len(loss_list)
-    print_result = (
-        'average_train_auc:%-8.4f' % average_train_auc,
-        'average_test_auc:%-8.4f' % average_test_auc,
-        'average_test_mse:%-8.4f' % average_test_mse,
-        'average_test_mae:%-8.4f' % average_test_mae,
-        'average_test_acc:%-8.4f' % average_test_acc,
-        'average_test_loss:%-8.4f' % average_test_loss
-    )
-    print('%s %s %s %s %s %s\n' % print_result)
     info_file.write('%s %s %s %s %s %s\n' % print_result)
 
 

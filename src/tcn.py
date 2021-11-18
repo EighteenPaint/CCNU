@@ -35,6 +35,7 @@ class TemporalBlock(nn.Module):
         self.downsample = nn.Conv1d(n_inputs, n_outputs, 1) if n_inputs != n_outputs else None
         self.relu = nn.ReLU()
         self.init_weights()
+
     def init_weights(self):
         self.conv1.weight.data.normal_(0, 0.01)
         self.conv2.weight.data.normal_(0, 0.01)
@@ -51,9 +52,17 @@ class TemporalBlock(nn.Module):
             return res
 
 
-
 class TemporalConvNetV4(nn.Module):
-    def __init__(self, num_inputs, num_channels, kernel_size=2, dropout=0.2,model_type='lskt'):
+    """
+    @article{BaiTCN2018,
+	author = {Shaojie Bai and J. Zico Kolter and Vladlen Koltun},
+	title = {An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling},
+	journal = {arXiv:1803.01271},
+	year = {2018},}
+
+    """
+
+    def __init__(self, num_inputs, num_channels, kernel_size=2, dropout=0.2, model_type='lskt'):
         super(TemporalConvNetV4, self).__init__()
         self.layers = []
         self.init = kernel_size

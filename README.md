@@ -1,6 +1,6 @@
 # CCNU LSKT
 # Learning Process Segment-based Knowledge Tracing with Cognitive Load Theory
-ICDE'2022: Learning Process Segment-based Knowledge Tracing with Cognitive Load Theory (Pytorch implementation for LSKT).
+<!-- ICDE'2022: Learning Process Segment-based Knowledge Tracing with Cognitive Load Theory (Pytorch implementation for LSKT).
 
 
 
@@ -10,10 +10,10 @@ If you find this code useful in your research then please cite
 @inproceedings{bin2022LSKT,
   title={Learning Process Segment-based Knowledge Tracing with Cognitive Load Theory},
   author={Tao Huang, Bin Chen, Huali Yang, Jing Geng,Hekun Xie and Tao Yu},
-  booktitle={Proceedings of the 37th IEEE International Conference on Data Engineering on Knowledge Discovery \& Data Mining},
+  booktitle={Proceedings of the 38th IEEE International Conference on Data Engineering on Knowledge Discovery \& Data Mining},
   year={2022}
 }
-``` 
+```  -->
 
 ## Setups
 The requiring environment is as bellow:  

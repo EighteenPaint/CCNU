@@ -14,9 +14,16 @@ If you find this code useful in your research then please cite
   year={2022}
 }
 ```  -->
-### PERFORMANCE OF ALL KT METHODS ON ALL DATASETS IN PREDICTING FUTURE STUDENT RESPONSES. BEST MODELS ARE BOLD.
-![image](https://user-images.githubusercontent.com/23374957/142338945-311961a2-1608-4ef9-bd6a-11c1bb9ff18e.png)
-### PERFORMANCE OF LSKT AND ITS VARIANTS ON ALL DATASETS IN PREDICTING FUTURE STUDENT RESPONSES. BEST MODELS ARE BOLD
+PERFORMANCE OF ALL KT METHODS ON ALL DATASETS IN PREDICTING FUTURE STUDENT RESPONSES. BEST MODELS ARE BOLD.
+
+![image](https://user-images.githubusercontent.com/23374957/142341268-54540e8d-a3fe-4873-a4f2-2e4354954c3e.png)
+
+
+PERFORMANCE OF LSKT AND ITS VARIANTS ON ALL DATASETS IN PREDICTING FUTURE STUDENT RESPONSES. BEST MODELS ARE BOLD
+-- LSKT-NT with only convolution in CT.
+-- LSKT-SK with same kernel size.
+-- LSKT-NS use average value of s_ij rather than student spatial attention mechanism.
+
 ![image](https://user-images.githubusercontent.com/23374957/142341042-6ec20d96-0348-4073-bccd-594ba52a2d66.png)
 
 

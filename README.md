@@ -10,8 +10,8 @@ If you find this code useful in your research then please cite
 @inproceedings{bin2022LSKT,
   title={Learning Process Segment-based Knowledge Tracing with Cognitive Load Theory},
   author={Tao Huang, Bin Chen, Huali Yang, Jing Geng,Hekun Xie and Tao Yu},
-  booktitle={Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
-  year={2020}
+  booktitle={Proceedings of the 37th IEEE International Conference on Data Engineering on Knowledge Discovery \& Data Mining},
+  year={2022}
 }
 ``` 
 

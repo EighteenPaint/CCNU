@@ -53,7 +53,7 @@ class TemporalBlock(nn.Module):
 
 class TemporalConvNetV4(nn.Module):
     """
-    @article{BaiTCN2018,
+    @inproceedings{BaiTCN2018,
 	author = {Shaojie Bai and J. Zico Kolter and Vladlen Koltun},
 	title = {An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling},
 	journal = {arXiv:1803.01271},

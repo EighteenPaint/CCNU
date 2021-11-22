@@ -10,12 +10,12 @@ from utils import *
 
 class TransformerLayer(nn.Module):
     """
-    @inproceedings{ghosh2020context,
-    title={Context-Aware Attentive Knowledge Tracing},
-    author={Ghosh, Aritra and Heffernan, Neil and Lan, Andrew S},
-    booktitle={Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
-    year={2020}
-    }
+    Thanks to : ghosh2020context,
+    title=Context-Aware Attentive Knowledge Tracing,
+    author=Ghosh, Aritra and Heffernan, Neil and Lan, Andrew S,
+    booktitle=Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining,
+    year=2020
+
     """
 
     def __init__(self, d_model, d_feature,

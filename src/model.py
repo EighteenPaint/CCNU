@@ -120,7 +120,7 @@ class LSKTC(nn.Module):
         super(LSKTC, self).__init__()
         self.embed_size = d_model
         self.n_question = q_num
-        self.N = n  # N是宽度，M是深度
+        self.N = n
         self.M = len(num_channels)
         self.out_size = num_channels[-1]
         self.encoder = ContextEncoderV2(q_num=self.n_question, d_model=self.embed_size, out_size=encoder_out, d_ff=d_ff,
